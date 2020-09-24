@@ -2,17 +2,27 @@
 key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
+key_jump_held = keyboard_check(vk_space);
 
 //Movement
+//Left and right
 var move = key_right - key_left;
 
 hsp = move * walksp;
-vsp = vsp + grv
+vsp = vsp + grv;
 
+//Jump
 if (place_meeting(x,y+1,oWall)) and (key_jump)
 {
-	vsp = vsp -7;
+	vsp = vsp + jumpsp;
 	
+}
+
+//Held jump
+
+if (vsp < 0) and (!key_jump_held) 
+{
+	vsp = max(vsp, jumpsp/3)
 }
 
 
