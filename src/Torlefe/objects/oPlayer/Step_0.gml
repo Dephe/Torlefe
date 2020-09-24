@@ -10,13 +10,7 @@ airborne = !grounded
 move = key_right - key_left;
 //Left and right grounded
 
-
 hsp = move * walksp;
-
-
-
-
-
 
 vsp = vsp + grv;
 
@@ -66,4 +60,5 @@ y = y + vsp;
 if (hsp != 0) && (vsp == 0) sprite_index = sNoviceR; else sprite_index = sNovice;
 
 if (hsp != 0) image_xscale = sign(hsp);
+
 
