@@ -5,10 +5,23 @@ key_jump = keyboard_check_pressed(vk_space);
 key_jump_held = keyboard_check(vk_space);
 
 //Movement
+grounded = place_meeting(x,y+1,oWall)
 //Left and right
-var move = key_right - key_left;
 
-hsp = move * walksp;
+
+move = key_right - key_left;
+
+if (grounded) and (move!= 0) 
+{
+	hsp = move * walksp;
+}
+else 
+{
+	hsp = 0;
+}
+
+
+
 vsp = vsp + grv;
 
 //Jump
