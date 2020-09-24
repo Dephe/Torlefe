@@ -6,19 +6,15 @@ key_jump_held = keyboard_check(vk_space);
 
 //Movement
 grounded = place_meeting(x,y+1,oWall)
-//Left and right
-
-
+airborne = !grounded
 move = key_right - key_left;
+//Left and right grounded
 
-if (grounded) and (move!= 0) 
-{
-	hsp = move * walksp;
-}
-else 
-{
-	hsp = 0;
-}
+
+hsp = move * walksp;
+
+
+
 
 
 

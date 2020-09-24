@@ -1,11 +1,11 @@
 // Stats - to do
-agi = 15
+agi = 20
 
 //
 hsp = 0;
 vsp = 0;
-grv = 0.8;
-walksp = 3 * (agi/10) + 1 ;
-jumpsp = -15; 
+grv = 1;
+walksp = 3 * (agi/15) + 1 ;
+jumpsp = -20; 
 
 
