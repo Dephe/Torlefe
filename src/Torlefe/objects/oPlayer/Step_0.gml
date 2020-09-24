@@ -50,4 +50,11 @@ if (place_meeting(x,y+vsp,oWall))
 	vsp=0;
 }
 
-y = y + vsp; 
+y = y + vsp;
+
+//Animation
+
+if (hsp != 0) && (vsp == 0) sprite_index = sNoviceR; else sprite_index = sNovice;
+
+if (hsp != 0) image_xscale = sign(hsp);
+
