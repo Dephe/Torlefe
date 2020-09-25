@@ -130,17 +130,32 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4) //&& (AAch
 
 //Blink
 
-
 if key_utility and blink_cd == 0 {
 	var ox = x
 	var oy = y 
-	hit_wall = place_meeting(ox + lengthdir_x(blink_range, point_direction(ox, oy, mouse_x, mouse_y)), oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y)), oWall )
-	if !hit_wall {
-		x = ox + lengthdir_x(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
-		y = oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
-		blink_cd = 20;
-		airtime = 20;
-	}
+	while blink_step < blink_range {
+		if !place_meeting(ox + lengthdir_x(blink_step, point_direction(ox, oy, mouse_x, mouse_y)), oy + lengthdir_y(blink_step, point_direction(ox, oy, mouse_x, mouse_y)), oWall ) {
+			blink_step += 1;
+		} 
+		if place_meeting(ox + lengthdir_x(blink_step, point_direction(ox, oy, mouse_x, mouse_y)), oy + lengthdir_y(blink_step, point_direction(ox, oy, mouse_x, mouse_y)), oWall ) {
+			blink_step = blink_range;
+		}
+		if blink_step+1 == blink_range {
+			if point_distance(x, y, mouse_x, mouse_y) > blink_range {
+				x = ox + lengthdir_x(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
+				y = oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
+				blink_cd = 30;
+				airtime = 10;
+				blink_step = blink_range;
+			} else if point_distance(x, y, mouse_x, mouse_y) < blink_range {
+				x = ox + lengthdir_x(point_distance(x, y, mouse_x, mouse_y), point_direction(ox, oy, mouse_x, mouse_y));
+				y = oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
+				blink_cd = 30;
+				airtime = 10;
+				blink_step = blink_range;
+			}
+		}
+	}	
 }
 
 if airtime > 0 {
@@ -153,3 +168,4 @@ if blink_cd > 0 {
 	blink_cd -=1
 }
 
+blink_step = 0;
