@@ -14,6 +14,8 @@ AAdelay = 0
 AAcharges = 4
 
 //blink
+init_airtime = 20;
+init_blink_cd = 60;
 blink_cd = 0;
 blink_range = 300;
 blink_step = 1;

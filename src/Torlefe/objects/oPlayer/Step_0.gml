@@ -146,20 +146,24 @@ if key_utility and blink_cd == 0 {
 			blink_step += 1;
 		} 
 		if touch_wall {
+			x = ox + lengthdir_x(blink_step-1, point_direction(ox, oy, mouse_x, mouse_y));
+			y = oy + lengthdir_y(blink_step-1, point_direction(ox, oy, mouse_x, mouse_y));
+			blink_cd = init_blink_cd;
+			airtime = init_airtime;
 			blink_step = blink_range;
 		}
 		if blink_step+1 == blink_range {
 			if point_distance(x, y, mouse_x, mouse_y) > blink_range {
 				x = ox + lengthdir_x(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
 				y = oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
-				blink_cd = 30;
-				airtime = 10;
+				blink_cd = init_blink_cd;
+				airtime = init_airtime;
 				blink_step = blink_range;
 			} else if point_distance(x, y, mouse_x, mouse_y) < blink_range {
 				x = ox + lengthdir_x(point_distance(x, y, mouse_x, mouse_y), point_direction(ox, oy, mouse_x, mouse_y));
 				y = oy + lengthdir_y(point_distance(x, y, mouse_x, mouse_y), point_direction(ox, oy, mouse_x, mouse_y));
-				blink_cd = 30;
-				airtime = 10;
+				blink_cd = init_blink_cd;
+				airtime = init_airtime;
 				blink_step = blink_range;
 			}
 		}
