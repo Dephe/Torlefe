@@ -129,21 +129,27 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4) //&& (AAch
 
 
 //Blink
-blink_cd = 180;
-blink_range = 600;
 
 
-
-if key_utility {
-	if point_distance(x, y, mouse_x, mouse_y) > blink_range {
-		instance_create_layer(x + lengthdir_x(blink_range, point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(blink_range, point_direction(x, y, mouse_x, mouse_y)), 1, oDummy);
-	} else {
-		instance_create_layer(x + lengthdir_x(point_distance(x, y, mouse_x, mouse_y), point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(point_distance(x, y, mouse_x, mouse_y), point_direction(x, y, mouse_x, mouse_y)), 1, oDummy);
+if key_utility and blink_cd == 0 {
+	var ox = x
+	var oy = y 
+	hit_wall = place_meeting(ox + lengthdir_x(blink_range, point_direction(ox, oy, mouse_x, mouse_y)), oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y)), oWall )
+	if !hit_wall {
+		x = ox + lengthdir_x(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
+		y = oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
+		blink_cd = 20;
+		airtime = 20;
 	}
 }
 
 if airtime > 0 {
-	vsp = vsp - grv
+	vsp = 0
+	hsp = 0
 	airtime -= 1
+}
+
+if blink_cd > 0 {
+	blink_cd -=1
 }
 
