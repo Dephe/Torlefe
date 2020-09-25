@@ -1,6 +1,8 @@
 {
   "resources": [
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
+    {"id":{"name":"oDummy","path":"objects/oDummy/oDummy.yy",},"order":4,},
+    {"id":{"name":"sDummy","path":"sprites/sDummy/sDummy.yy",},"order":4,},
     {"id":{"name":"sNovice","path":"sprites/sNovice/sNovice.yy",},"order":1,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":1,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":0,},

@@ -135,9 +135,11 @@ blink_range = 600;
 
 
 if key_utility {
-	x = mouse_x;
-	y = mouse_y;
-	airtime = 20;
+	if point_distance(x, y, mouse_x, mouse_y) > blink_range {
+		instance_create_layer(x + lengthdir_x(blink_range, point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(blink_range, point_direction(x, y, mouse_x, mouse_y)), 1, oDummy);
+	} else {
+		instance_create_layer(x + lengthdir_x(point_distance(x, y, mouse_x, mouse_y), point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(point_distance(x, y, mouse_x, mouse_y), point_direction(x, y, mouse_x, mouse_y)), 1, oDummy);
+	}
 }
 
 if airtime > 0 {
