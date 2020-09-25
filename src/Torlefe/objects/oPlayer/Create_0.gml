@@ -7,6 +7,7 @@ vsp = 0;
 grv = 1;
 walksp = 3 * (agi/15) + 1 ;
 jumpsp = -20; 
+airtime = 0;
 
 //
 AAdelay = 0

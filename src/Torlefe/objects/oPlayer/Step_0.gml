@@ -3,6 +3,7 @@ key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
 key_jump_held = keyboard_check(vk_space);
+key_utility = keyboard_check_pressed(vk_shift);
 
 //Movement
 grounded = place_meeting(x,y+1,oWall)
@@ -126,4 +127,21 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4) //&& (AAch
 
 //if (AAcharges = 0) && (AAdelay < -30) AAcharges = 4 después implemento
 
+
+//Blink
+blink_cd = 180;
+blink_range = 600;
+
+
+
+if key_utility {
+	x = mouse_x;
+	y = mouse_y;
+	airtime = 20;
+}
+
+if airtime > 0 {
+	vsp = vsp - grv
+	airtime -= 1
+}
 
