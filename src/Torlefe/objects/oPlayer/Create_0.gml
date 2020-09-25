@@ -10,3 +10,4 @@ jumpsp = -20;
 
 //
 AAdelay = 0
+AAcharges = 4

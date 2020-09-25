@@ -8,15 +8,9 @@ key_jump_held = keyboard_check(vk_space);
 grounded = place_meeting(x,y+1,oWall)
 airborne = !grounded
 move = key_right - key_left;
+
 //Left and right grounded
-
-
 hsp = move * walksp;
-
-
-
-
-
 
 vsp = vsp + grv;
 
@@ -67,12 +61,12 @@ if (hsp != 0) && (vsp == 0) sprite_index = sNoviceR; else sprite_index = sNovice
 
 if (hsp != 0) image_xscale = sign(hsp);
 
-//Skills
-	//AA
+//AA
 AAdelay -= 1
-if (mouse_check_button(mb_left)) && (AAdelay < 0)
+if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4) && (AAcharges > 0)
 {
-	AAdelay = 25;
+	AAdelay = 30;
+	AAcharges -= 1
 	with (instance_create_layer(x,y,"HitboxSkill",oAAMage))
 	{
 		speed = 3;
@@ -80,3 +74,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0)
 		direction = image_angle;
 	}
 }
+
+if (AAcharges = 0) && (AAdelay < -30) AAcharges = 4
+
+
