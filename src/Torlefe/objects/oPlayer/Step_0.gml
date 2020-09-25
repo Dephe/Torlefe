@@ -64,7 +64,7 @@ if (hsp != 0) image_xscale = sign(hsp);
 
 //AA
 AAdelay -= 1
-if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4) //&& (AAcharges > 0)
+if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 {
 	AAdelay = 30;
 	AAcharges -= 1
@@ -114,6 +114,14 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4) //&& (AAch
 		}
 	}
 	
+	else if (mouse_check_button_released(mb_left)) && (instance_exists(AAball1)) || (instance_exists(AAball2)) || (instance_exists(AAball3)) || (instance_exists(AAball4))
+	{
+		with (AAball1)
+		{
+		move_towards_point(mouse_x, mouse_y, 10)
+		}
+	}
+	
 	else if (AAcharges == -1)
 	{
 		instance_destroy(AAball1)
@@ -124,7 +132,6 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4) //&& (AAch
 		
 	}
 }
-
 //if (AAcharges = 0) && (AAdelay < -30) AAcharges = 4 después implemento
 
 
