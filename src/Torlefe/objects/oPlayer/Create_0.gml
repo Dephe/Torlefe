@@ -8,4 +8,5 @@ grv = 1;
 walksp = 3 * (agi/15) + 1 ;
 jumpsp = -20; 
 
-
+//
+AAdelay = 0

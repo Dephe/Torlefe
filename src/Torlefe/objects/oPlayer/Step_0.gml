@@ -10,7 +10,13 @@ airborne = !grounded
 move = key_right - key_left;
 //Left and right grounded
 
+
 hsp = move * walksp;
+
+
+
+
+
 
 vsp = vsp + grv;
 
@@ -61,4 +67,16 @@ if (hsp != 0) && (vsp == 0) sprite_index = sNoviceR; else sprite_index = sNovice
 
 if (hsp != 0) image_xscale = sign(hsp);
 
-
+//Skills
+	//AA
+AAdelay -= 1
+if (mouse_check_button(mb_left)) && (AAdelay < 0)
+{
+	AAdelay = 25;
+	with (instance_create_layer(x,y,"HitboxSkill",oAAMage))
+	{
+		speed = 3;
+		image_angle = point_direction(x,y,mouse_x,mouse_y);
+		direction = image_angle;
+	}
+}
