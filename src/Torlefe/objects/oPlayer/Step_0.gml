@@ -58,7 +58,7 @@ y = y + vsp;
 
 //Animation
 
-if (hsp != 0) && (vsp == 0) sprite_index = sNoviceR; else sprite_index = sNovice;
+if (hsp != 0) && (vsp == 0) sprite_index = sTechnoM; else sprite_index = sTechnoMIdle;
 
 if (hsp != 0) image_xscale = sign(hsp);
 
@@ -129,8 +129,11 @@ if instance_exists(oAAMage) && (!mouse_check_button(mb_left))
 {
 	with (oAAMage)
 	{
-		followid = id
-		move_towards_point(mouse_x,mouse_y,10)
+		OGmousex = mouse_x
+		OGmousey = mouse_y
+		speed = 10
+		direction = point_direction (x, y, OGmousex, OGmousey)
+		
 	}	
 }
 

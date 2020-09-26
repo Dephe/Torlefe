@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "sNovice",
-    "path": "sprites/sNovice/sNovice.yy",
+    "name": "sTechnoM",
+    "path": "sprites/sTechnoM/sTechnoM.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": {
-    "name": "sNovice",
-    "path": "sprites/sNovice/sNovice.yy",
+    "name": "sTechnoM",
+    "path": "sprites/sTechnoM/sTechnoM.yy",
   },
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": true,
   "physicsSensor": false,
