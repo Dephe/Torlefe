@@ -63,6 +63,7 @@ if (hsp != 0) && (vsp == 0) sprite_index = sNoviceR; else sprite_index = sNovice
 if (hsp != 0) image_xscale = sign(hsp);
 
 //AA
+
 AAdelay -= 1
 if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 {
@@ -72,7 +73,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	if (AAcharges == 3)
 	{
-		AAball1 = instance_create_layer(x+40,y-20,"HitboxSkill",oAAMage)
+	AAball1 = instance_create_layer(x+40,y-20,"HitboxSkill",oAAMage)
 		with (AAball1)
 		{
 			followid = other.id
@@ -83,7 +84,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 2)
 	{
-		AAball2 = instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage)
+	AAball2 = instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage)
 		with (AAball2)
 		{
 			followid = other.id
@@ -94,7 +95,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 1)
 	{
-		AAball3 = instance_create_layer(x-20,y-40,"HitboxSkill",oAAMage)
+	AAball3 = instance_create_layer(x-20,y-40,"HitboxSkill",oAAMage)
 		with (AAball3)
 		{
 			followid = other.id
@@ -105,20 +106,12 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 0)
 	{
-		AAball4 = instance_create_layer(x-40,y-20,"HitboxSkill",oAAMage)
+	AAball4 = instance_create_layer(x-40,y-20,"HitboxSkill",oAAMage)	
 		with (AAball4)
 		{
 			followid = other.id
 			AAx = -40
 			AAy = -20
-		}
-	}
-	
-	else if (mouse_check_button_released(mb_left)) && (instance_exists(AAball1)) || (instance_exists(AAball2)) || (instance_exists(AAball3)) || (instance_exists(AAball4))
-	{
-		with (AAball1)
-		{
-		move_towards_point(mouse_x, mouse_y, 10)
 		}
 	}
 	
@@ -132,6 +125,16 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 		
 	}
 }
+if instance_exists(oAAMage) && (!mouse_check_button(mb_left))
+{
+	with (oAAMage)
+	{
+		followid = id
+		move_towards_point(mouse_x,mouse_y,10)
+	}	
+}
+
+
 //if (AAcharges = 0) && (AAdelay < -30) AAcharges = 4 después implemento
 
 
