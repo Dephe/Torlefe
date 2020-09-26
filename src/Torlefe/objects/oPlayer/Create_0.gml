@@ -13,6 +13,7 @@ airtime = 0;
 AAdelay = 0
 AAcharges = 4
 
+
 //blink
 init_airtime = 20;
 init_blink_cd = 60;

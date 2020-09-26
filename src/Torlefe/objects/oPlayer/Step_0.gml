@@ -125,15 +125,15 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 		
 	}
 }
-if instance_exists(oAAMage) && (!mouse_check_button(mb_left))
+
+if (instance_exists(oAAMage)) && (mouse_check_button_released(mb_left))
 {
 	with (oAAMage)
-	{
-		OGmousex = mouse_x
-		OGmousey = mouse_y
+	{	
+		OGmx = mouse_x
+		OGmy = mouse_y
 		speed = 10
-		direction = point_direction (x, y, OGmousex, OGmousey)
-		
+		direction = point_direction(x, y, OGmx, OGmy)
 	}	
 }
 
