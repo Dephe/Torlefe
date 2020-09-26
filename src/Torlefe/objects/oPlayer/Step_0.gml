@@ -73,8 +73,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	if (AAcharges == 3)
 	{
-	AAball1 = instance_create_layer(x+40,y-20,"HitboxSkill",oAAMage)
-		with (AAball1)
+		with (instance_create_layer(x+40,y-20,"HitboxSkill",oAAMage))
 		{
 			followid = other.id
 			AAx = 40
@@ -84,8 +83,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 2)
 	{
-	AAball2 = instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage)
-		with (AAball2)
+		with (instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage))
 		{
 			followid = other.id
 			AAx = 20
@@ -95,8 +93,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 1)
 	{
-	AAball3 = instance_create_layer(x-20,y-40,"HitboxSkill",oAAMage)
-		with (AAball3)
+		with (instance_create_layer(x-20,y-40,"HitboxSkill",oAAMage))
 		{
 			followid = other.id
 			AAx = -20
@@ -106,8 +103,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 0)
 	{
-	AAball4 = instance_create_layer(x-40,y-20,"HitboxSkill",oAAMage)	
-		with (AAball4)
+		with (instance_create_layer(x-40,y-20,"HitboxSkill",oAAMage))
 		{
 			followid = other.id
 			AAx = -40
@@ -117,12 +113,8 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == -1)
 	{
-		instance_destroy(AAball1)
-		instance_destroy(AAball2)
-		instance_destroy(AAball3)
-		instance_destroy(AAball4)
+		instance_destroy(oAAMage)
 		AAcharges = 4
-		
 	}
 }
 
@@ -132,7 +124,7 @@ if (instance_exists(oAAMage)) && (mouse_check_button_released(mb_left))
 	{	
 		OGmx = mouse_x
 		OGmy = mouse_y
-		speed = 10
+		speed = 15
 		direction = point_direction(x, y, OGmx, OGmy)
 	}	
 }
