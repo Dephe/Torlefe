@@ -151,7 +151,7 @@ if key_utility and blink_cd == 0 {
 			blink_step += 1;
 		} 
 		if touch_wall {
-			sprite_index = sTechnoMBlink
+			sprite_index = sTechnoMBlink;
 			not_blink = 20;
 			x = ox + lengthdir_x(blink_step-1, point_direction(ox, oy, mouse_x, mouse_y));
 			y = oy + lengthdir_y(blink_step-1, point_direction(ox, oy, mouse_x, mouse_y));

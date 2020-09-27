@@ -5,7 +5,7 @@ if instance_exists(oPlayer) {
 	if masky_interval < 0 {
 		dist_to_player_x = random_range(-400, 400)
 		dist_to_player_y = random_range(-400, 400)
-		while abs(dist_to_player_x) < 100 and abs(dist_to_player_y)  {
+		while abs(dist_to_player_x) < 100 {
 			dist_to_player_x = random_range(-400, 400)
 			dist_to_player_y = random_range(-400, 400)
 		}
