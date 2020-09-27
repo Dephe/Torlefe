@@ -132,7 +132,7 @@ if (instance_exists(oAAMage)) && (mouse_check_button_released(mb_left))
 		OGmx = mouse_x
 		OGmy = mouse_y
 		speed = 15
-		direction = point_direction(x, y, OGmx, OGmy)
+		direction = point_direction(x,y,OGmx,OGmy)
 	}	
 }
 
