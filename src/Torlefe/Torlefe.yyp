@@ -1,9 +1,9 @@
 {
   "resources": [
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
-    {"id":{"name":"oDummy","path":"objects/oDummy/oDummy.yy",},"order":4,},
-    {"id":{"name":"sDummy","path":"sprites/sDummy/sDummy.yy",},"order":4,},
+    {"id":{"name":"sMaskyDude","path":"sprites/sMaskyDude/sMaskyDude.yy",},"order":7,},
     {"id":{"name":"sTechnoM","path":"sprites/sTechnoM/sTechnoM.yy",},"order":6,},
+    {"id":{"name":"oMaskySpawner","path":"objects/oMaskySpawner/oMaskySpawner.yy",},"order":6,},
     {"id":{"name":"sNovice","path":"sprites/sNovice/sNovice.yy",},"order":1,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":1,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":0,},
@@ -11,6 +11,7 @@
     {"id":{"name":"oAAMage","path":"objects/oAAMage/oAAMage.yy",},"order":3,},
     {"id":{"name":"sTechnoMIdle","path":"sprites/sTechnoMIdle/sTechnoMIdle.yy",},"order":5,},
     {"id":{"name":"Object2","path":"objects/Object2/Object2.yy",},"order":17,},
+    {"id":{"name":"oMaskyDude","path":"objects/oMaskyDude/oMaskyDude.yy",},"order":5,},
     {"id":{"name":"sNoviceR","path":"sprites/sNoviceR/sNoviceR.yy",},"order":2,},
     {"id":{"name":"sAAMage","path":"sprites/sAAMage/sAAMage.yy",},"order":3,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},

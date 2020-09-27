@@ -179,3 +179,8 @@ if blink_cd > 0 {
 }
 
 blink_step = 0;
+
+//HP
+if player_hp < 1 {
+	instance_destroy();
+}

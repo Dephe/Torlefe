@@ -1,4 +1,5 @@
 // Stats - to do
+player_hp = 1
 agi = 20
 
 //
