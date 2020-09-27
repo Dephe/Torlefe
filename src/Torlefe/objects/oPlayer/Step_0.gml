@@ -58,9 +58,16 @@ y = y + vsp;
 
 //Animation
 
-if (hsp != 0) && (vsp == 0) sprite_index = sTechnoM; else sprite_index = sTechnoMIdle;
+if not_blink <= 0 {
 
-if (hsp != 0) image_xscale = sign(hsp);
+	if hsp != 0 && vsp == 0 {
+		sprite_index = sTechnoM; } else sprite_index = sTechnoMIdle;
+}
+
+
+if hsp != 0 image_xscale = sign(hsp);
+
+
 
 //AA
 
@@ -144,25 +151,34 @@ if key_utility and blink_cd == 0 {
 			blink_step += 1;
 		} 
 		if touch_wall {
+			sprite_index = sTechnoMBlink
+			not_blink = 20;
 			x = ox + lengthdir_x(blink_step-1, point_direction(ox, oy, mouse_x, mouse_y));
 			y = oy + lengthdir_y(blink_step-1, point_direction(ox, oy, mouse_x, mouse_y));
 			blink_cd = init_blink_cd;
 			airtime = init_airtime;
 			blink_step = blink_range;
+			
 		}
 		if blink_step+1 == blink_range {
 			if point_distance(x, y, mouse_x, mouse_y) > blink_range {
+				sprite_index = sTechnoMBlink
+				not_blink = 20;
 				x = ox + lengthdir_x(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
 				y = oy + lengthdir_y(blink_range, point_direction(ox, oy, mouse_x, mouse_y));
 				blink_cd = init_blink_cd;
 				airtime = init_airtime;
 				blink_step = blink_range;
+				
 			} else if point_distance(x, y, mouse_x, mouse_y) < blink_range {
+				sprite_index = sTechnoMBlink
+				not_blink = 20;
 				x = ox + lengthdir_x(point_distance(x, y, mouse_x, mouse_y), point_direction(ox, oy, mouse_x, mouse_y));
 				y = oy + lengthdir_y(point_distance(x, y, mouse_x, mouse_y), point_direction(ox, oy, mouse_x, mouse_y));
 				blink_cd = init_blink_cd;
 				airtime = init_airtime;
 				blink_step = blink_range;
+				
 			}
 		}
 	}	
@@ -179,6 +195,7 @@ if blink_cd > 0 {
 }
 
 blink_step = 0;
+not_blink -= 1;
 
 //HP
 if player_hp < 1 {
