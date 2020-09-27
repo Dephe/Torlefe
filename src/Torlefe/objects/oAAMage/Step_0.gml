@@ -7,3 +7,5 @@ if mouse_check_button(mb_left)
 	y = followid.y + AAy
 }
 
+
+// Collision with enemy

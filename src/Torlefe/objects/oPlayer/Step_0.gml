@@ -199,5 +199,6 @@ not_blink -= 1;
 
 //HP
 if player_hp < 1 {
+	game_restart();
 	instance_destroy();
 }

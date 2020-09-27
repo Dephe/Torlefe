@@ -17,6 +17,6 @@ if place_meeting(x, y, oPlayer) {
 	instance_destroy();
 	}
 	
-if place_meeting(x,y, oAAMage) {
-	mask_hp -= 1;
+if place_meeting(x,y,oAAMage) {
+		self.mask_hp -= 1;
 }
