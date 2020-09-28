@@ -10,7 +10,7 @@ walksp = 3 * (agi/15) + 1 ;
 jumpsp = -20; 
 airtime = 0;
 
-//
+// AA
 AAdelay = 0
 AAcharges = 4
 

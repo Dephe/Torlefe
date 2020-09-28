@@ -9,3 +9,7 @@ if mouse_check_button(mb_left)
 
 
 // Collision with enemy
+if (place_meeting(x,y,oWall)) && (!mouse_check_button(mb_left))
+	{
+		instance_destroy(oAAMage)
+	}

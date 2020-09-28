@@ -80,7 +80,8 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	if (AAcharges == 3)
 	{
-		with (instance_create_layer(x+40,y-20,"HitboxSkill",oAAMage))
+		var AA1 = instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage)
+		with (AA1)
 		{
 			followid = other.id
 			AAx = 40
@@ -90,7 +91,8 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 2)
 	{
-		with (instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage))
+		var AA2 = instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage)
+		with (AA2)
 		{
 			followid = other.id
 			AAx = 20
@@ -100,7 +102,8 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 1)
 	{
-		with (instance_create_layer(x-20,y-40,"HitboxSkill",oAAMage))
+		var AA3 = instance_create_layer(x-20,y-40,"HitboxSkill",oAAMage)
+		with (AA3)
 		{
 			followid = other.id
 			AAx = -20
@@ -110,7 +113,8 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	else if (AAcharges == 0)
 	{
-		with (instance_create_layer(x-40,y-20,"HitboxSkill",oAAMage))
+		var AA4 = instance_create_layer(x-40,y-20,"HitboxSkill",oAAMage)
+		with (AA4)
 		{
 			followid = other.id
 			AAx = -40
@@ -118,11 +122,6 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 		}
 	}
 	
-	else if (AAcharges == -1)
-	{
-		instance_destroy(oAAMage)
-		AAcharges = 4
-	}
 }
 
 if (instance_exists(oAAMage)) && (mouse_check_button_released(mb_left))
@@ -134,6 +133,7 @@ if (instance_exists(oAAMage)) && (mouse_check_button_released(mb_left))
 		speed = 15
 		direction = point_direction(x,y,OGmx,OGmy)
 	}	
+	AAcharges = 4
 }
 
 
