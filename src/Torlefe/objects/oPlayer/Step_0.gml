@@ -80,14 +80,15 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 	
 	if (AAcharges == 3)
 	{
-		var AA1 = instance_create_layer(x+20,y-40,"HitboxSkill",oAAMage)
+		var AA1 = instance_create_layer(x+40,y-20,"HitboxSkill",oAAMage)
 		with (AA1)
 		{
 			followid = other.id
 			AAx = 40
 			AAy = -20
+			
 		}
-	}
+	}	
 	
 	else if (AAcharges == 2)
 	{
@@ -97,6 +98,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 			followid = other.id
 			AAx = 20
 			AAy = -40
+			
 		}
 	}
 	
@@ -108,6 +110,7 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 			followid = other.id
 			AAx = -20
 			AAy = -40
+		
 		}
 	}
 	
@@ -119,22 +122,12 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 			followid = other.id
 			AAx = -40
 			AAy = -20
+		
 		}
 	}
 	
 }
 
-if (instance_exists(oAAMage)) && (mouse_check_button_released(mb_left))
-{
-	with (oAAMage)
-	{	
-		OGmx = mouse_x
-		OGmy = mouse_y
-		speed = 15
-		direction = point_direction(x,y,OGmx,OGmy)
-	}	
-	AAcharges = 4
-}
 
 
 //if (AAcharges = 0) && (AAdelay < -30) AAcharges = 4 después implemento
