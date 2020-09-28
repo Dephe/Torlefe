@@ -3,6 +3,7 @@
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"sMaskyDude","path":"sprites/sMaskyDude/sMaskyDude.yy",},"order":7,},
     {"id":{"name":"sTechnoM","path":"sprites/sTechnoM/sTechnoM.yy",},"order":6,},
+    {"id":{"name":"sTechnoMRun","path":"sprites/sTechnoMRun/sTechnoMRun.yy",},"order":10,},
     {"id":{"name":"sTechnoMBlink","path":"sprites/sTechnoMBlink/sTechnoMBlink.yy",},"order":8,},
     {"id":{"name":"oMaskySpawner","path":"objects/oMaskySpawner/oMaskySpawner.yy",},"order":6,},
     {"id":{"name":"sNovice","path":"sprites/sNovice/sNovice.yy",},"order":1,},
