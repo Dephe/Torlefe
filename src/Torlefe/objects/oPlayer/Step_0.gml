@@ -61,7 +61,7 @@ y = y + vsp;
 if not_blink <= 0 {
 
 	if hsp != 0 && vsp == 0 {
-		sprite_index = sTechnoM; } else sprite_index = sTechnoMIdle;
+		sprite_index = sTechnoMRun; } else sprite_index = sTechnoMIdle;
 }
 
 
