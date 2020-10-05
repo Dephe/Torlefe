@@ -6,7 +6,7 @@ image_speed = 0;
 if instance_exists(oPlayer) {
 move_towards_point(oPlayer.x, oPlayer.y, mask_speed);
 }
-mask_speed += 0.01;
+mask_speed += 0.00;
 
 if mask_speed > 0.61 and mask_speed < 1.21 {
 image_index = 1;

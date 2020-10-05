@@ -133,6 +133,26 @@ if (mouse_check_button(mb_left)) && (AAdelay < 0) && (AAcharges <= 4)
 //if (AAcharges = 0) && (AAdelay < -30) AAcharges = 4 después implemento
 
 
+//rightclick
+
+if mouse_check_button(mb_right) and bolt_cooldown == 0 {
+	bolt_step = 0
+	while bolt_step < bolt_range {
+		if collision_line(x, y, x+lengthdir_x(bolt_step,point_direction(x,y,mouse_x, mouse_y)), y+lengthdir_y(bolt_step,point_direction(x,y,mouse_x, mouse_y)), oMaskyDude,false,false) {
+			bolted_dude = collision_line(x, y, x+lengthdir_x(bolt_step,point_direction(x,y,mouse_x, mouse_y)), y+lengthdir_y(bolt_step,point_direction(x,y,mouse_x, mouse_y)), oMaskyDude,false,false)
+			bolt_step = bolt_range;
+			draw_bolt = 1;
+			bolt_cooldown = bolt_cooldown_init;
+		} else {
+			bolt_step += 1
+		}
+	}
+}
+
+if bolt_cooldown > 0 {
+	bolt_cooldown -= 1;
+}
+
 //Blink
 if key_utility and blink_cd == 0 {
 	var ox = x

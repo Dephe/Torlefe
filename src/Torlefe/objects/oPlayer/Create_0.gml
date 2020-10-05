@@ -11,8 +11,20 @@ jumpsp = -20;
 airtime = 0;
 
 // AA
-AAdelay = 0
-AAcharges = 4
+AAdelay = 0;
+AAcharges = 4;
+
+//right click
+bolt_jumps = 3;
+bolt_range = 200;
+bolt_cooldown_init = 60;
+bolt_cooldown = 0;
+frames_alive = 10;
+frames_elapsed = 0;
+draw_bolt = 0;
+bolted_dude = 0;
+
+
 
 
 //blink
